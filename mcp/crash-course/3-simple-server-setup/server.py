@@ -16,10 +16,27 @@ def add(a: int, b: int) -> int:
     """Add two numbers together"""
     return a + b
 
+# Add a simple calculator tool
+@mcp.tool()
+def minus(a: int, b: int) -> int:
+    """Minus two numbers together"""
+    return a - b 
+
+# Add a simple calculator tool
+@mcp.tool()
+def multiply(a: int, b: int) -> int:
+    """Multiply two numbers together"""
+    return a * b
+
+# Add a simple calculator tool
+@mcp.tool()
+def divide(a: int, b: int) -> int:
+    """Divide two numbers together"""
+    return a // b 
 
 # Run the server
 if __name__ == "__main__":
-    transport = sys.argv[1] if len(sys.argv) > 1 else "stdio"
+    transport = sys.argv[1] if len(sys.argv) > 1 else "sse"
     if transport == "stdio":
         print("Running server with stdio transport", file=sys.stderr)
         mcp.run(transport="stdio")

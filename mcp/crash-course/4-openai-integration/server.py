@@ -38,6 +38,7 @@ def get_knowledge_base() -> str:
                 kb_text += f"A{i}: {answer}\n\n"
         else:
             kb_text += f"Knowledge base content: {json.dumps(kb_data, indent=2)}\n\n"
+            # Use this as template, Add other steps like Hybrid Search, Similarity Search, Topk results,
 
         return kb_text
     except FileNotFoundError:

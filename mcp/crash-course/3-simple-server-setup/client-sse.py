@@ -30,8 +30,15 @@ async def main():
                 print(f"  - {tool.name}: {tool.description}")
 
             # Call our calculator tool
-            result = await session.call_tool("add", arguments={"a": 2, "b": 3})
-            print(f"2 + 3 = {result.content[0].text}")
+            result_add = await session.call_tool("add", arguments={"a": 6, "b": 7})
+            result_minus = await session.call_tool("minus", arguments={"a": 6, "b": 7})
+            result_multiply = await session.call_tool("multiply", arguments={"a": 6, "b": 7})
+            result_divide = await session.call_tool("divide", arguments={"a": 6, "b": 7})
+
+            print(f"6 + 7 = {result_add.content[0].text}")
+            print(f"6 - 7 = {result_minus.content[0].text}")
+            print(f"6 * 7 = {result_multiply.content[0].text}")
+            print(f"6 / 7 = {result_divide.content[0].text}")
 
 
 if __name__ == "__main__":

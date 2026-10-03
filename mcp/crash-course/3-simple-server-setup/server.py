@@ -36,7 +36,7 @@ def divide(a: int, b: int) -> int:
 
 # Run the server
 if __name__ == "__main__":
-    transport = sys.argv[1] if len(sys.argv) > 1 else "sse"
+    transport = sys.argv[1] if len(sys.argv) > 1 else "streamable-http"
     if transport == "stdio":
         print("Running server with stdio transport", file=sys.stderr)
         mcp.run(transport="stdio")
